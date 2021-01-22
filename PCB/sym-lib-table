@@ -2,4 +2,5 @@
   (lib (name mpr121_module)(type Legacy)(uri ${KIPRJMOD}/additional/mpr121_module.lib)(options "")(descr ""))
   (lib (name Arduino_Pro_Mini)(type Legacy)(uri ${KIPRJMOD}/additional/Arduino_Pro_Mini.lib)(options "")(descr ""))
   (lib (name cc1101)(type Legacy)(uri ${KIPRJMOD}/additional/cc1101.lib)(options "")(descr ""))
+  (lib (name HB-RC-4-TOUCH-rescue)(type Legacy)(uri ${KIPRJMOD}/HB-RC-4-TOUCH-rescue.lib)(options "")(descr ""))
 )
