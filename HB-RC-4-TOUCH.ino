@@ -19,9 +19,9 @@
 
 #include "MPR121TouchPad.h"
 
-#define LED_PIN           4
-#define LED_PIN2          5
-#define CONFIG_BUTTON_PIN 9
+#define LED_PIN           5
+#define LED_PIN2          4
+#define CONFIG_BUTTON_PIN 8
 #define MPR121_IRQ_PIN    3
 
 
@@ -46,7 +46,7 @@ const struct DeviceInfo PROGMEM devinfo = {
  */
 typedef LibSPI<10> SPIType;
 typedef Radio<SPIType,2> RadioType;
-typedef DualStatusLed<5,4> LedType;
+typedef DualStatusLed<LED_PIN2,LED_PIN> LedType;
 typedef AskSin<LedType,IrqInternalBatt,RadioType> Hal;
 
 
@@ -146,6 +146,8 @@ void setup () {
 void loop() {
   bool worked = hal.runready();
   bool poll = sdev.pollRadio();
+  //mpr121.debug_print();delay(10);
+
   if( worked == false && poll == false ) {
     if( hal.battery.critical() ) {
       hal.sleepForever();
