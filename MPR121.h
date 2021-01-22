@@ -150,6 +150,7 @@ public:
     return temp;                                                      // and returns the value
   }
   void set_thresholds(uint8_t touched, uint8_t released, uint8_t ele) {
+    DPRINT("set threshold #");DDEC(ele);DPRINT(" to ");DDEC(touched);DPRINT("/");DDECLN(released);
     uint8_t ecr = 0b11000000;
     write_register(MPR121_ECR, ecr);                                  // disable all electrodes to apply threshold settings
 
